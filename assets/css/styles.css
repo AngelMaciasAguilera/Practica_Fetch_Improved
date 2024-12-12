@@ -91,6 +91,7 @@ body{
     justify-content: space-between; 
     border: 10px double black;
     align-items: flex-start;
+    position: relative;
     padding: 1rem;
     margin: 2rem 2rem 0rem 2rem;
 }
@@ -99,6 +100,7 @@ body{
     width: calc(50% - 1rem); 
     height: 400px;
     box-sizing: border-box; 
+    position: relative;
     border: 5px dotted darkgrey; 
     border-radius: 8px; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
