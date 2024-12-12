@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: seagreen;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    color: black;
+    border: 5px dotted darkgray;
+    align-items: flex-start;
+    padding: 1rem;
+    margin: 2rem 2rem 0rem 2rem;
+}
+
+.card{
+    display: flex;
+    width: 100px;
+    height: 150px;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    gap: 1rem;
+    background-color: whitesmoke;
+}
+
+
+.card:hover{
+    cursor: grab;
+}
+
+.card div:nth-child(2){
+    align-self: center;
+}
+
+.card div:nth-child(3){
+    align-self: flex-end;
+}
+
+.gnrt-desk {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #008000; 
+    border: 2px solid #006400; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+    cursor: pointer;
+}
+
+/* Efecto hover */
+.gnrt-desk:hover {
+    background-color: #006400; 
+    border-color: #004d00; 
+    transform: translateY(-2px); 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.gnrt-desk:active {
+    background-color: #004d00; 
+    transform: translateY(2px); 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.card-hollows {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem;
+    justify-content: space-between; 
+    border: 10px double black;
+    align-items: flex-start;
+    padding: 1rem;
+    margin: 2rem 2rem 0rem 2rem;
+}
+
+.card-hollow {
+    width: calc(50% - 1rem); 
+    height: 400px;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: row nowrap;
+    border: 5px dotted darkgrey; 
+    border-radius: 8px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.card-hollow h3{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
