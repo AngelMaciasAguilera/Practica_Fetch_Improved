@@ -89,12 +89,6 @@ export const uiDesk = {
             });
         });
     },
-
-    adminCardPosition: (cardsPosition) => {
-        console.log("Hola cards: ", cardsPosition);
-        console.log("esquema de la carta", uiDesk.cardSchema);
-
-    }
 }
 
 
