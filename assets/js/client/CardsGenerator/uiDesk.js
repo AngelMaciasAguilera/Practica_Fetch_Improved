@@ -1,17 +1,21 @@
+import { CardPosHandler } from '../ServerManager/CardPosHandler.js';
 import {cardsStructure} from './cardsStructure.js';
 import { containersStructure } from './containersStructure.js';
 export const uiDesk = {
     desk: [],
     cardSchema: {},
     type: '',
-    init: ()=>{
+    init: async ()=>{
         
-        uiDesk.cardSchema = document.createElement(cardsStructure.mainCardContainer);
+        //Creo el contenedor principal con la estructura que me llega en el json cardsStructure
+        uiDesk.cardSchema = document.createElement(cardsStructure.mainCardContainer);   
 
+        //Recorro las clases del contenedor que me llegan en el json y se las anexo al contenedor 
         cardsStructure.cardClasses.forEach(classelement => {
             uiDesk.cardSchema.classList.add(classelement);    
         });
         
+        //Le anexo ademas los atributos que me lleguen por el json
         cardsStructure.attributes.forEach(attribute => {
             for (const key in attribute) {
                 uiDesk.cardSchema.setAttribute(key, attribute[key]);
@@ -21,6 +25,18 @@ export const uiDesk = {
         cardsStructure.childElements.forEach(element => {
             uiDesk.cardSchema.appendChild(document.createElement(element));
         })
+        //Array auxiliar donde voy a guardar la posicion de las cartas
+        let arrayaux = [];
+        //Le paso la referencia de mi objeto array para que se pueda realizar el volcado de datos 
+        CardPosHandler.obtainCardPositions(arrayaux);
+
+        //Una vez con ese array ya listo configuro lo que quiero hacer
+        console.log(arrayaux)
+
+        
+
+
+
     },
 
     fillDesk: (typeInserted)=>{
@@ -74,6 +90,12 @@ export const uiDesk = {
         uiDesk.desk.forEach(card => {
             mainContainer.appendChild(card);
         });
+    },
+
+    adminCardPosition : (cardsPosition) =>{
+        console.log("Hola cards: " , cardsPosition);
+        console.log("esquema de la carta" ,uiDesk.cardSchema);
+        
     }
 }
 

@@ -37,11 +37,19 @@ export const uiHollows = {
                 
                     // Movemos el elemento dentro del contenedor sin cambiar su posición ademas compruebo que el palo de la carta coincida con el palo del contenedor
                     if (!event.target.contains(draggedElement) && data.club === event.target.dataset.club) {
-                        event.target.appendChild(draggedElement); // Pongo la carta en el contenedor seleccionado
+                        const containerRect = event.target.getBoundingClientRect();
+                        const offsetX = event.clientX - containerRect.left;
+                        const offsetY = event.clientY - containerRect.top;
+
+                        // Coloca la carta en el contenedor
+                        draggedElement.style.position = 'absolute';
+                        draggedElement.style.left = `${offsetX}px`;
+                        draggedElement.style.top = `${offsetY}px`;
                         CardPosHandler.sendPosition(
                             {
-                                "positionX" : event.positionX,
-                                "positionY" : event.positionY
+                                "cardId" : data.id,
+                                "positionX" : event.clientX,
+                                "positionY" : event.clientY
                             }
                         );
                     }
@@ -52,6 +60,7 @@ export const uiHollows = {
         }
     },
 
+    //Genera los huecos donde se van a poder posicionar las cartas
     generateHollows: ()=>{
         let hollowMainContainer = document.createElement(hollowMainContainerStructure.mainContainerElement);
         console.log(hollowMainContainer);

@@ -99,8 +99,6 @@ body{
     width: calc(50% - 1rem); 
     height: 400px;
     box-sizing: border-box; 
-    display: flex;
-    flex-direction: row nowrap;
     border: 5px dotted darkgrey; 
     border-radius: 8px; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 

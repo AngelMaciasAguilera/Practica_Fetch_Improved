@@ -11,7 +11,9 @@ app.use(bodyParser.json());          // Habilitamos que lea json cuando nos lleg
 let cardPositions = [];
 
 app.get('/', (req, res) => {
-    console.log("Hola");
+    
+    res.send(cardPositions);
+
 });
 
 
